@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <p>Esse é o perfil do {{ nome }}</p>
+    {% if nome == "cachorro" %}
+        <p>sim, essa é de cachorros</p>
+    {% elif nome == "gato" %}
+        <p>essa é a página de gatos</p>
+    {% else %}
+        <p>essa página não é de nada</p>
+    {% endif %}
+    <h1>Esses são nossos dogs</h1>
+    <ul>
+    {% for dog in cachorros %}
+        <li>{{dog}}</li>
+    {% endfor %}
+
+    </ul>
+    <a href="/contato">Contato</a>
+
+</body>
+</html>
